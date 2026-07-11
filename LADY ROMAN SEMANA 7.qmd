@@ -1,0 +1,50 @@
+---
+title: "SEMANA 9 - MET EST - EJERCICIO 2"
+author: "LADY ALESSANDRA ROMAN GARCIA"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#DATOS
+x<-c(1,2,3,4,5)
+y<-c(60,68,75,82,90)
+```
+
+You can add options to executable code like this
+
+```{r}
+#COEFICIENTE DE CORRELACIÓN DE PEARSSON
+cor(x,y)
+```
+
+```{r}
+#OBTENIENDO COEFICIENTES DE LA REGRESIÓN
+#MODELO
+modelo<-lm(y~x)
+coef(modelo)
+```
+
+```{r}
+#HAY UNA CORRELACION MUY FUERTE EN EL TIEMPO DEL CUIDADO Y EL NIVEL DE SATISFACION 
+#SATISFACCION DEL TIEMPO DE CUIDADO DE 6 HORAS 
+
+predict(modelo,data.frame(x=6))
+```
+
+```{r}
+#gráfico
+
+plot(x,y,main = "TIEMPO DEL CUIDADO vs NIVEL DE SATISFACCION",
+     xlab = "TIEMPO DEL CUIDADO",
+     ylab = "NIVEL DE SATISFACCION",pch=19)
+abline(modelo,lwd=2)
+```
