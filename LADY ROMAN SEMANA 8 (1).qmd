@@ -1,0 +1,49 @@
+---
+title: "SEMANA 9 - MET EST - EJERCICIO 3"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#DATOS
+x<-c(4,6,8,10,12)
+y<-c(2,3,4,5,7)
+```
+
+You can add options to executable code like this
+
+```{r}
+#COEFICIENTE DE CORRELACIÓN DE PEARSSON
+cor(x,y)
+```
+
+```{r}
+#OBTENIENDO COEFICIENTES DE LA REGRESIÓN
+#MODELO
+modelo<-lm(y~x)
+coef(modelo)
+```
+
+```{r}
+#NUMERO DE PACIENTES
+#TIEMPO DE RESPUESTA PARA 14 PACIENTES
+
+predict(modelo,data.frame(x=14))
+```
+
+```{r}
+#gráfico
+
+plot(x,y,main = "TIEMPO DE RESPUESTA PARA 14 PACIENTES vs NUMERO DE PACIENTES",
+     xlab = "TIEMPO DE RESPUESTA PARA 14 PACIENTES",
+     ylab = "NUMERO DE PACIENTES",pch=19)
+abline(modelo,lwd=2)
+```
